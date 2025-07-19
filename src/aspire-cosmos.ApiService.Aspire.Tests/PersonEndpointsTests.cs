@@ -21,7 +21,7 @@ public class PersonEndpointsTests
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
         await app.ResourceNotifications.WaitForResourceHealthyAsync("apiservice", cts.Token);
 
-        var client = app.CreateHttpClient("apiservice");
+        var client = app.CreateHttpClient("apiservice", "http");
         var person = new Person { FirstName = "John", LastName = "Doe", BirthDate = new DateTime(1990, 1, 1), Sex = "M" };
         var response = await client.PostAsJsonAsync("/people/", person);
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
@@ -40,7 +40,7 @@ public class PersonEndpointsTests
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
         await app.ResourceNotifications.WaitForResourceHealthyAsync("apiservice", cts.Token);
 
-        var client = app.CreateHttpClient("apiservice");
+        var client = app.CreateHttpClient("apiservice", "http");
         var person = new Person { FirstName = "Jane", LastName = "Smith", BirthDate = new DateTime(1985, 5, 5), Sex = "F" };
         await client.PostAsJsonAsync("/people/", person);
         var response = await client.GetAsync("/people/");
@@ -60,7 +60,7 @@ public class PersonEndpointsTests
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
         await app.ResourceNotifications.WaitForResourceHealthyAsync("apiservice", cts.Token);
 
-        var client = app.CreateHttpClient("apiservice");
+        var client = app.CreateHttpClient("apiservice", "http");
         var person = new Person { FirstName = "Alice", LastName = "Johnson", BirthDate = new DateTime(2000, 2, 2), Sex = "F" };
         var createResp = await client.PostAsJsonAsync("/people/", person);
         var created = await createResp.Content.ReadFromJsonAsync<Person>();
@@ -81,7 +81,7 @@ public class PersonEndpointsTests
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
         await app.ResourceNotifications.WaitForResourceHealthyAsync("apiservice", cts.Token);
 
-        var client = app.CreateHttpClient("apiservice");
+        var client = app.CreateHttpClient("apiservice", "http");
         var person = new Person { FirstName = "Bob", LastName = "Brown", BirthDate = new DateTime(1975, 3, 3), Sex = "M" };
         var createResp = await client.PostAsJsonAsync("/people/", person);
         var created = await createResp.Content.ReadFromJsonAsync<Person>();
@@ -103,7 +103,7 @@ public class PersonEndpointsTests
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
         await app.ResourceNotifications.WaitForResourceHealthyAsync("apiservice", cts.Token);
 
-        var client = app.CreateHttpClient("apiservice");
+        var client = app.CreateHttpClient("apiservice", "http");
         var person = new Person { FirstName = "Eve", LastName = "White", BirthDate = new DateTime(1995, 4, 4), Sex = "F" };
         var createResp = await client.PostAsJsonAsync("/people/", person);
         var created = await createResp.Content.ReadFromJsonAsync<Person>();

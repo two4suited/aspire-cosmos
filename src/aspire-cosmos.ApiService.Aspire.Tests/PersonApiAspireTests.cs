@@ -16,7 +16,7 @@ public class PersonApiAspireTests
         await using var app = await builder.BuildAsync();
         await app.StartAsync();
 
-        var httpClient = app.CreateHttpClient("apiservice");
+        var httpClient = app.CreateHttpClient("apiservice", "http");
 
         var person = new { FirstName = "Aspire", LastName = "Test", BirthDate = "2000-01-01T00:00:00Z", Sex = "F" };
         var createResp = await httpClient.PostAsJsonAsync("/people/", person);
