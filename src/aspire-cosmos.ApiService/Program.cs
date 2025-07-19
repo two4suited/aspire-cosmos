@@ -2,6 +2,7 @@
 using Aspire.Microsoft.EntityFrameworkCore.Cosmos;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
@@ -12,12 +13,25 @@ builder.AddServiceDefaults();
 builder.Services.AddProblemDetails();
 
 // Add EF Core Cosmos DB context using Aspire integration
-builder.AddCosmosDbContext<aspire_cosmos.ApiService.Data.PersonDbContext>("cosmosdb", "appdb");
+builder.AddCosmosDbContext<aspire_cosmos.ApiService.Data.PersonDbContext>("appdb");
+
+
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+
+
+
+
 var app = builder.Build();
+
+// Ensure Cosmos DB container is created at startup (async)
+await using (var scope = app.Services.CreateAsyncScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<aspire_cosmos.ApiService.Data.PersonDbContext>();
+    await db.Database.EnsureCreatedAsync();
+}
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
