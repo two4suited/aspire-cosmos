@@ -1,0 +1,36 @@
+### Usage:
+# 1. Run the POST request to create a new person. Copy the returned `id` value (or use the static example below).
+# 2. Use the same `id` in the GET, PUT, and DELETE requests.
+# 3. You can change the static GUID to any value you like for testing.
+
+# Example random GUID for testing (regenerates each run):
+@personId={{$guid}}
+
+### Create a new Person
+POST http://localhost:5392/people
+Content-Type: application/json
+
+{
+  "id": "{{personId}}",
+  "name": "Ada Lovelace",
+  "age": 36
+}
+
+### Get all People
+GET http://localhost:5392/people
+
+### Get a Person by ID
+GET http://localhost:5392/people/{{personId}}
+
+### Update a Person
+PUT http://localhost:5392/people/{{personId}}
+Content-Type: application/json
+
+{
+  "id": "{{personId}}",
+  "name": "Updated Name",
+  "age": 40
+}
+
+### Delete a Person
+DELETE http://localhost:5392/people/{{personId}}

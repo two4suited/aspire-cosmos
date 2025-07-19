@@ -8,7 +8,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 var cosmosDb = builder.AddAzureCosmosDB("cosmosdb")
     .RunAsPreviewEmulator(emulator =>
     {
-        // You can add emulator configuration here if needed, e.g. emulator.WithDataExplorer();
+        emulator.WithDataExplorer();
     });
 var cosmosDatabase = cosmosDb.AddCosmosDatabase("appdb");
 
