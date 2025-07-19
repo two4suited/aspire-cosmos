@@ -13,7 +13,9 @@ var cosmosDb = builder.AddAzureCosmosDB("cosmosdb")
 var cosmosDatabase = cosmosDb.AddCosmosDatabase("appdb");
 
 
+
 var apiService = builder.AddProject<Projects.aspire_cosmos_ApiService>("apiservice")
+    .WithEnvironment("ASPNETCORE_ENVIRONMENT", "Development")
     .WithHttpHealthCheck("/health")
     .WaitFor(cosmosDatabase)
     .WithReference(cosmosDatabase);

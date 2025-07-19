@@ -33,5 +33,4 @@ aspire_cosmos.ApiService.Endpoints.PersonEndpoints.MapPersonEndpoints(app);
 
 app.MapDefaultEndpoints();
 
-
-public partial class Program { }
+app.Run();
