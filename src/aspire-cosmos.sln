@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspire-cosmos.ApiService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspire-cosmos.Web", "aspire-cosmos.Web\aspire-cosmos.Web.csproj", "{2F645B67-BF0A-4B80-9DBB-2AB1A5FADED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspire-cosmos.ApiService.AspireTests", "aspire-cosmos.ApiService.AspireTests\aspire-cosmos.ApiService.AspireTests.csproj", "{8A9124C6-A84C-4FAA-8F2C-BEC2F9D9E31B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspire-cosmos.ApiService.Aspire.Tests", "aspire-cosmos.ApiService.Aspire.Tests\aspire-cosmos.ApiService.Aspire.Tests.csproj", "{8A9124C6-A84C-4FAA-8F2C-BEC2F9D9E31B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

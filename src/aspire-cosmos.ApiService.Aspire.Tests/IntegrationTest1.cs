@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace aspire_cosmos.ApiService.AspireTests.Tests;
+namespace aspire_cosmos.ApiService.Aspire.Tests.Tests;
 
 public class IntegrationTest1
 {

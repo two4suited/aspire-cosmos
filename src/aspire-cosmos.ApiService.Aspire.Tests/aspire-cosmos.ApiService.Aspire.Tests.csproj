@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <AssemblyName>aspire-cosmos.ApiService.Aspire.Tests</AssemblyName>
+    <RootNamespace>aspire_cosmos.ApiService.Aspire.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

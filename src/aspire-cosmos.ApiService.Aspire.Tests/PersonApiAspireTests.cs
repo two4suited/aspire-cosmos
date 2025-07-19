@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Aspire.Hosting.Testing;
 using Xunit;
 
-namespace aspire_cosmos.ApiService.AspireTests;
+namespace aspire_cosmos.ApiService.Aspire.Tests;
 
 public class PersonApiAspireTests
 {
