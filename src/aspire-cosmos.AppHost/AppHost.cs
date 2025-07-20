@@ -15,7 +15,7 @@ var container = cosmosDatabase.AddContainer("People","/id");
 builder.AddAzureAppServiceEnvironment("infra");
 
 // Add Application Insights resource for telemetry and monitoring
-var appInsights = builder.AddAzureApplicationInsights("appinsights");
+//var appInsights = builder.AddAzureApplicationInsights("appinsights");
 
 var apiService = builder.AddProject<Projects.aspire_cosmos_ApiService>("apiservice")
     .WithEnvironment("ASPNETCORE_ENVIRONMENT", "Development")
@@ -23,7 +23,7 @@ var apiService = builder.AddProject<Projects.aspire_cosmos_ApiService>("apiservi
     .WaitFor(cosmosDatabase)
     .WithReference(cosmosDatabase)
     // Reference Application Insights for telemetry
-    .WithReference(appInsights)
+   // .WithReference(appInsights)
     .WithExternalHttpEndpoints()
     .WithReference(container).WaitFor(container);
 
