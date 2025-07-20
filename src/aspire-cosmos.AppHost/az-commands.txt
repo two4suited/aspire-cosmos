@@ -1,0 +1,14 @@
+az cosmosdb sql role assignment create \
+    --resource-group "rg-test" \
+    --account-name "cosmosdb-rhbgrhhdwyy5c" \
+    --role-definition-id "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c/sqlRoleDefinitions/1e625a25-f621-5e2d-9217-2936b9cb45e3" \
+    --principal-id "2d7d0c44-46ce-42c0-9783-a1da6890dd2b" \
+    --scope "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c"
+
+az cosmosdb sql role assignment create --resource-group "rg-test" --account-name "cosmosdb-rhbgrhhdwyy5c" --role-definition-id "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c/sqlRoleDefinitions/1e625a25-f621-5e2d-9217-2936b9cb45e3" --principal-id "cd766d78-8a08-4d7b-89e6-f65247e307e3" --scope "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c"
+  az cosmosdb sql role assignment create --resource-group "rg-test" --account-name "cosmosdb-rhbgrhhdwyy5c" --role-definition-id "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c/sqlRoleDefinitions/1e625a25-f621-5e2d-9217-2936b9cb45e3" --principal-id "00ff357b-05c1-4355-acbb-d511c2c2aaf2" --scope "/subscriptions/3bd10068-0c35-4ed1-8436-1b052ac96a2b/resourceGroups/rg-test/providers/Microsoft.DocumentDB/databaseAccounts/cosmosdb-rhbgrhhdwyy5c"
+
+    az cosmosdb sql role definition list --resource-group "rg-test" --account-name "cosmosdb-rhbgrhhdwyy5c"
+    az cosmosdb sql role assignment list --resource-group "rg-test" --account-name "cosmosdb-rhbgrhhdwyy5c"
+
+    az resource update --resource-group  "rg-test"  --name "cosmosdb-rhbgrhhdwyy5c" --resource-type "Microsoft.DocumentDB/databaseAccounts" -set properties.disableLocalAuth=true

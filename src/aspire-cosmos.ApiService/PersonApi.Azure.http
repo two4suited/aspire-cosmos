@@ -7,7 +7,7 @@
 @personId={{$guid}}
 
 ### Create a new Person
-POST http://localhost:5392/people
+POST https://apiservice-rhbgrhhdwyy5c.azurewebsites.net/people
 Content-Type: application/json
 
 {
@@ -18,13 +18,13 @@ Content-Type: application/json
 }
 
 ### Get all People
-GET http://localhost:5392/people
+GET https://apiservice-rhbgrhhdwyy5c.azurewebsites.net/people
 
 ### Get a Person by ID
-GET http://localhost:5392/people/{{personId}}
+GET https://apiservice-rhbgrhhdwyy5c.azurewebsites.net/people/{{personId}}
 
 ### Update a Person
-PUT http://localhost:5392/people/{{personId}}
+PUT https://apiservice-rhbgrhhdwyy5c.azurewebsites.net/people/{{personId}}
 Content-Type: application/json
 
 {
@@ -36,4 +36,4 @@ Content-Type: application/json
 }
 
 ### Delete a Person
-DELETE http://localhost:5392/people/{{personId}}
+DELETE https://apiservice-rhbgrhhdwyy5c.azurewebsites.net/people/{{personId}}

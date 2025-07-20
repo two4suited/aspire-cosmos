@@ -1,0 +1,12 @@
+using './apiservice.module.bicep'
+
+param apiservice_containerimage = '{{ .Image }}'
+param apiservice_containerport = '{{ targetPortOrDefault 8080 }}'
+param apiservice_identity_outputs_clientid = '{{ .Env.APISERVICE_IDENTITY_CLIENTID }}'
+param apiservice_identity_outputs_id = '{{ .Env.APISERVICE_IDENTITY_ID }}'
+param appinsights_outputs_appinsightsconnectionstring = '{{ .Env.APPINSIGHTS_APPINSIGHTSCONNECTIONSTRING }}'
+param cosmosdb_outputs_connectionstring = '{{ .Env.COSMOSDB_CONNECTIONSTRING }}'
+param infra_outputs_azure_container_registry_endpoint = '{{ .Env.INFRA_AZURE_CONTAINER_REGISTRY_ENDPOINT }}'
+param infra_outputs_azure_container_registry_managed_identity_client_id = '{{ .Env.INFRA_AZURE_CONTAINER_REGISTRY_MANAGED_IDENTITY_CLIENT_ID }}'
+param infra_outputs_azure_container_registry_managed_identity_id = '{{ .Env.INFRA_AZURE_CONTAINER_REGISTRY_MANAGED_IDENTITY_ID }}'
+param infra_outputs_planid = '{{ .Env.INFRA_PLANID }}'

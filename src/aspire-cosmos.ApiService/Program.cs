@@ -26,12 +26,7 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Ensure Cosmos DB container is created at startup (async)
-await using (var scope = app.Services.CreateAsyncScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<aspire_cosmos.ApiService.Data.PersonDbContext>();
-    await db.Database.EnsureCreatedAsync();
-}
+
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
