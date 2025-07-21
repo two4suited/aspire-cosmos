@@ -39,14 +39,6 @@ module apiservice_roles_cosmosdb 'apiservice-roles-cosmosdb/apiservice-roles-cos
     principalId: apiservice_identity.outputs.principalId
   }
 }
-module appinsights 'appinsights/appinsights.module.bicep' = {
-  name: 'appinsights'
-  scope: rg
-  params: {
-    location: location
-    logAnalyticsWorkspaceId: ''
-  }
-}
 module cosmosdb 'cosmosdb/cosmosdb.module.bicep' = {
   name: 'cosmosdb'
   scope: rg
@@ -64,7 +56,6 @@ module infra 'infra/infra.module.bicep' = {
 }
 output APISERVICE_IDENTITY_CLIENTID string = apiservice_identity.outputs.clientId
 output APISERVICE_IDENTITY_ID string = apiservice_identity.outputs.id
-output APPINSIGHTS_APPINSIGHTSCONNECTIONSTRING string = appinsights.outputs.appInsightsConnectionString
 output AZURE_CONTAINER_REGISTRY_ENDPOINT string = infra.outputs.AZURE_CONTAINER_REGISTRY_ENDPOINT
 output COSMOSDB_CONNECTIONSTRING string = cosmosdb.outputs.connectionString
 output INFRA_AZURE_CONTAINER_REGISTRY_ENDPOINT string = infra.outputs.AZURE_CONTAINER_REGISTRY_ENDPOINT

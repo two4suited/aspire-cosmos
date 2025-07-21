@@ -15,8 +15,6 @@ param apiservice_containerport string
 
 param cosmosdb_outputs_connectionstring string
 
-param appinsights_outputs_appinsightsconnectionstring string
-
 param apiservice_identity_outputs_id string
 
 param apiservice_identity_outputs_clientid string
@@ -70,10 +68,6 @@ resource webapp 'Microsoft.Web/sites@2024-04-01' = {
         {
           name: 'ConnectionStrings__appdb'
           value: 'AccountEndpoint=${cosmosdb_outputs_connectionstring};Database=appdb'
-        }
-        {
-          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
-          value: appinsights_outputs_appinsightsconnectionstring
         }
         {
           name: 'ConnectionStrings__People'
